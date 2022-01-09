@@ -1,5 +1,7 @@
 # LRLG： Depth Image Inpainting: Improving Low Rank Completion with Low Gradient Regularization
 
+> This is a fork of ZJULearning/depthInpainting. It was created for docker support and fixing some mistake in Makefile.
+
 Table of Contents
 =================
 <!--ts-->
