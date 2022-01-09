@@ -28,7 +28,7 @@ for var in ${B[@]}; do
             fi
             echo 'lambda_l0 = ' ${lam} ', K = ' $k ', maxCnt = ' ${max}
             OUTPUT=${paramDir}/${var}/lrl0_${MISS}_
-            ./depthInpainting LRL0 ${DISPPATH} ${MASK} ${OUTPUT} ${A}/${var}/tnnr_${MISS}.png $k ${lam\
+            ../build/depthInpainting LRL0PHI ${DISPPATH} ${MASK} ${OUTPUT} ${A}/${var}/tnnr_${MISS}.png $k ${lam\
 } ${max} ${paramDir}/${var}
 
         done
