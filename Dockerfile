@@ -27,7 +27,8 @@ RUN apt-get install -y -qq \
     curl \
     tar \
     unzip \
-    g++ 
+    g++ \
+    vim
 
 ARG CMAKE_INSTALL_PREFIX=/usr/local
 ARG NUM_THREADS=1
