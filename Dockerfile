@@ -19,6 +19,7 @@ RUN apt-get install -y -qq \
     libswscale-dev \
     libavresample-dev \
     libyaml-cpp-dev \
+    libgtk2.0-dev \
     build-essential \
     pkg-config \
     cmake \

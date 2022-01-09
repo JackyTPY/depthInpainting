@@ -254,7 +254,7 @@ int main(int argc, char ** argv)
       disparityMissing.copyTo(orig); orig.convertTo(orig, CV_32FC1);
       multiply(disparityMissing, mask / 255, disparityMissing);
 
-      imshow("dd",disparityMissing);waitKey(0);
+      // imshow("dd",disparityMissing);waitKey(0);
       LRTVPHI lrttv(disparityMissing, mask);
       lrttv.setShrinkageParam(1.0,1.0);
 
@@ -284,9 +284,9 @@ int main(int argc, char ** argv)
       Mat output;
       result = lrttv.getU();
       result.convertTo(output, CV_8UC1);
-      imwrite(inpaintedPath, output);
-      imwrite("tM.png", M);
-      imwrite("tY.png", Y);
+      imwrite(inpaintedPath + "result.png", output);
+      imwrite(inpaintedPath + "tM.png", M);
+      imwrite(inpaintedPath + "tY.png", Y);
     }
   else if( instruction == "X" )
     {
@@ -322,8 +322,8 @@ int main(int argc, char ** argv)
       lrl0.init_U(denoised);
       Mat result = lrl0.compute(K, max_iter, inpaintedPath, orig, path1);
       // Mat output;
-      //result.convertTo(output, CV_8UC1);
-      //imwrite(inpaintedPath, output);
+      // result.convertTo(output, CV_8UC1);
+      // imwrite(inpaintedPath, output);
       
       
     }
