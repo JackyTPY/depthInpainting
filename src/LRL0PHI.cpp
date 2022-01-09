@@ -335,7 +335,7 @@ void LRL0PHI::sub_2()
     // TNNR
     Mat At;
     A.convertTo(At, CV_8UC1);
-    M_ = TNNR(At, mask, 9, 9, lambda);
+    M_ = TNNR(At, mask, 2, 20, lambda);
     
     
 }

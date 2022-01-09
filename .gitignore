@@ -1,4 +1,5 @@
 build_docker.sh
+build_cpp.sh
 run_docker.sh
 .DS_Store
 result/*_*

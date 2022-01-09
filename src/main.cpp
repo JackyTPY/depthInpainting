@@ -141,7 +141,7 @@ int main(int argc, char ** argv)
 
       LRTV lrtv(disparityMissing, mask);
       // rho dt lambda_tv lambda_rank 100 10
-      lrtv.setParameters(1.2, 0.1, 40, 10);
+      lrtv.setParameters(1.2, 0.1, atoi(argv[6]), atof(argv[7]));
       lrtv.init_U(denoised);
       Mat result = lrtv.compute();
       Mat M = lrtv.getM();
@@ -262,7 +262,7 @@ int main(int argc, char ** argv)
      
       // rho dt lambda_tv lambda_rank
       // rho = 1.2
-      lrttv.setParameters(1.2, 0.1, 10, 0.01);
+      lrttv.setParameters(1.2, 0.1, atoi(argv[6]), atof(argv[7]));
       lrttv.setNewtonParameters(0.001); // set gamma
 
       // imshow("temp", denoised);

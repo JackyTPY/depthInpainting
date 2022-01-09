@@ -89,7 +89,7 @@ Mat TNNR(Mat &im0, Mat &mask, int lower_R, int upper_R, float lambda)
   for(int R = lower_R; R <= upper_R; R++)
     {
 
-      for(int out_iter = 1; out_iter < 11; ++out_iter)
+      for(int out_iter = 1; out_iter < number_out_of_iter; ++out_iter)
 	{
 	  //	  cout << "  TNNR  iter = " << out_iter << endl;
 	  Mat u,sigma,v;
