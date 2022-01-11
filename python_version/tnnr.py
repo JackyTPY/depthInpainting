@@ -63,18 +63,17 @@ def TNNR(im0, mask, lower_R, upper_R, lambda_):
     X_rec = np.zeros((H, W), np.float64)
     X_rec_last = np.zeros((H,W), np.float64)
     eps = 0.1
-    number_out_of_iter = 10
 
     for R in range(lower_R, upper_R+1):
         for out_iter in range(1, 11):
             u, sigma, v = np.linalg.svd(X, full_matrices=False)
-            A = u[:, :R]
+            A = u[:, :R-1]
             A = A.T
-            B = v[:R, :]
+            B = v[:R-1, :]
 
             X_rec = APGL(A, B, X, M, mask, eps, lambda_)
 
-            if out_iter >= 2 and np.linalg.norm(X_rec - X_rec_last, 'fro') / np.linalg.norm(M, 'fro') < 0.0001:
+            if out_iter >= 2 and np.linalg.norm(X_rec - X_rec_last, 'fro') / np.linalg.norm(M, 'fro') < 0.01:
                 X = np.copy(X_rec)
                 break
 
