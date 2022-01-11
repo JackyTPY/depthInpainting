@@ -141,6 +141,8 @@ class LRTV:
         mask = 255 * np.ones((self.H, self.W), dtype=np.uint8)
         lambda_ = self.rho / 2.0 / self.lambda_rank / self.alpha
 
+        A = np.maximum(A, 0)
+        A = np.minimum(A, 255)
         At = A.astype(np.uint8)
         self.M = TNNR(At, mask, 9, 9, lambda_)
 
